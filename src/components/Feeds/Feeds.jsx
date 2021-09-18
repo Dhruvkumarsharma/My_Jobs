@@ -12,9 +12,18 @@ const Feeds = () => {
     const handleonclick = ()=>{
         history.push("/postjobs");
     }
-    useEffect( async() =>{
-        let jobs = await axios.get(`${base_url}/jobs`);
-        setPost(jobs.data.data);
+    useEffect( () =>{
+        function fetchData() {
+            try{
+                let jobs = await axios.get(`${base_url}/jobs`);
+                setPost(jobs.data.data);
+
+            }catch(err){
+                console.log(err);
+            }
+
+        }
+        fetchData();
     }, [])
     return ( 
         <div className="feeds">

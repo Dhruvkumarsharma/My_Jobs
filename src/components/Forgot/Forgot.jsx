@@ -1,4 +1,3 @@
-import { fontSize } from '@mui/system';
 import axios from 'axios';
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
@@ -19,7 +18,7 @@ const Forgot = ( { addToken } ) => {
             let res2 = await axios.get(`${base_url}auth/resetpassword/${token}`);
             let msg = res2.data.success;
             console.log(msg);
-            if(msg == true) {
+            if(msg === true) {
                 history.push("/setpass");
             }
         }catch(err){
