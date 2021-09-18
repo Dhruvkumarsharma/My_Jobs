@@ -1,0 +1,25 @@
+.feeds {
+    margin: 20px;
+    padding: 35px;
+}
+
+.feed-title {
+    color: #FFFAF1;
+    margin-left: 50px;
+}
+
+.feed-posts  {
+    display:flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 60px;
+    padding: 20px;
+
+}
+.empty  {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+}
+

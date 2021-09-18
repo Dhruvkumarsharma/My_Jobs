@@ -1,0 +1,1 @@
+export const base_url =  "https://jobs-api.squareboat.info/api/v1/";

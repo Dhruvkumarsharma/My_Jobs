@@ -1,0 +1,13 @@
+.job-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.postjobs div label {
+    font-size: 0.9rem;
+}
+
+.post-job-description input {
+    height: 100px;
+}
+

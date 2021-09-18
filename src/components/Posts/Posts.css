@@ -1,0 +1,37 @@
+.post-container {
+    transition: 0.3s;
+    margin-top: 8px;
+    margin-left: 0px;
+    min-width: 350px !important;
+    height: 200px;
+    border-radius: 8px;
+    background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 30px 36px 10px #557DA526;
+    opacity: 1;
+    padding: 30px;
+    padding-left: 20px !important;
+}
+
+.post-bottom > button {
+    color: white;
+}
+
+.post-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+.pos-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.posts {
+    position: relative;
+    left: -40px;
+    display:flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 10px;
+}

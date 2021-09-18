@@ -1,0 +1,91 @@
+.signup-container {
+    transition: 0.3s;
+    margin-left: 30vw;
+    margin-top: 100px;
+    left: 442px;
+    width: 400px !important;
+    height: 500px;
+    border-radius: 20px;
+    background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 30px 36px 40px #557DA526;
+    opacity: 1;
+    padding: 30px;
+    padding-left: 20px !important;
+}
+.rec {
+    top: 204px;
+    left: 472px;
+    width: 126px;
+    height: 30px;
+    color: white;
+    background: var(--unnamed-color-43afff) 0% 0% no-repeat padding-box;
+    border: 1px solid var(--unnamed-color-43afff);
+    background: #43AFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #43AFFF;
+    border-radius: 5px;
+    opacity: 1;
+    font-size: 0.9rem;
+}
+.primary {
+    top: 204px;
+    left: 628px;
+    width: 126px;
+    height: 30px;
+    margin-left: 40px;
+    background: #E8E8E833 0% 0% no-repeat padding-box;
+    border: 1px solid #C6C6C6;
+    border-radius: 5px;
+    opacity: 1;
+    font-size: 0.9rem;
+}
+.buttn {
+    margin-bottom: 10px;
+}
+.signup-container label {
+    font-size: 0.9rem;
+}
+.Name {
+    margin-bottom: 8px;
+}
+.password-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+ .pass input {
+    width: 160px;
+ }
+.conpass {
+    width:160px;
+    margin-left: 15px;
+}
+.skills {
+    margin-top: 10px;
+}
+.sign-btn {
+    top: 439px;
+    left: 646px;
+    width: 108px;
+    height: 35px;
+    color: white;
+    background: var(--unnamed-color-43afff) 0% 0% no-repeat padding-box;
+    border: 1px solid var(--unnamed-color-43afff);
+    background: #43AFFF 0% 0% no-repeat padding-box !important;
+    border: 1px solid #43AFFF;
+    border-radius: 5px;
+    opacity: 1
+}
+.signup-btn {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sign-signup {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+

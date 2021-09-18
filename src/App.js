@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Header from './components/Header/Header';
+import "./App.css";
+import Home from './components/Home/Home';
+import Login from './components/Login/Login';
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import Signup from './components/Signup/Signup';
+import Forgot from './components/Forgot/Forgot';
+import SetPass from './components/SetPass/SetPass';
+import Feeds from './components/Feeds/Feeds';
+import Postjobs from './components/Postjob/Postjob';
+import { connect } from 'react-redux';
 
-function App() {
+function App({ user }) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Header />
+        <Switch>
+          <Route path="/" exact component={Home}></Route>
+          <Route path="/login" exact component={Login}></Route>
+          <Route path="/signup" exact component={Signup}></Route>
+          <Route path="/forgot" exact component={Forgot} ></Route>
+          <Route path="/setpass" exact component={SetPass}></Route>
+          {user ? (
+            <>
+              <Route path="/feeds" exact component={Feeds}></Route>
+              <Route path="/postjobs" exact component={Postjobs}></Route>
+            </>
+          ) : (
+            <Redirect to="/"></Redirect>
+          )}
+        </Switch>
+
+      </Router>
     </div>
   );
 }
 
-export default App;
+const mapStatetoProps = (Store) => {
+  return {
+    user: Store.user,
+  }
+}
+
+export default connect(mapStatetoProps,)(App);

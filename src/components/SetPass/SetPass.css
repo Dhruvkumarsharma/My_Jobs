@@ -1,0 +1,21 @@
+.setpass-container {
+    transition: 0.3s;
+    margin-left: 30vw;
+    margin-top: 100px;
+    left: 442px;
+    width: 400px !important;
+    height: 350px;
+    border-radius: 20px;
+    background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 30px 36px 40px #557DA526;
+    opacity: 1;
+    padding: 30px;
+    padding-left: 20px !important;
+}
+.Confirm-password {
+    margin-bottom: 10px;
+}
+label {
+    font-size: 0.8rem;
+}

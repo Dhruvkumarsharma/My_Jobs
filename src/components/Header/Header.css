@@ -1,0 +1,63 @@
+.header {
+    top: 0px;
+    margin-left: 40px;
+    width: 1440px;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--unnamed-color-ffffff);
+}
+
+.header-title {
+    top: 22px;
+    left: 70px;
+    width: 82px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-title span {
+    font-weight: bolder;
+}
+
+.header-title .my{
+    color: white;
+    height: 100%;
+}
+.header-title .jobs {
+    color: var(--unnamed-color-43afff);
+    height: 100%;
+}
+
+.header-button {
+    top: 22px;
+    left: 1222px;
+    width: 148px;
+    height: 40px;
+}
+
+.butn {
+    height: 100%;
+    width: 100%;
+    border: 1px solid #43afff;
+    background: #43AFFF33 0% 0% no-repeat padding-box;
+    border: 1px solid #43AFFF;
+    border-radius: 5px;
+    opacity: 1;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.header-signin {
+    display: flex;
+}
+.header-signin Avatar {
+    margin-left: 10px;
+}
+.signout {
+    cursor: pointer;
+}
