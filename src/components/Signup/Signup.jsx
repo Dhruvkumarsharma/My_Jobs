@@ -23,7 +23,7 @@ const Signup = ( { addUser }) => {
             console.log(res.data);
             history.push("/feeds");
         }catch( err ) {
-            console.log(err);
+            console.log(err.message);
         }
     }
 

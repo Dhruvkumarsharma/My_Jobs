@@ -22,7 +22,6 @@ export const addUser = (user) =>{
 
 
 const reducer = ( state = initialState, action ) => {
-    console.log(action);
     switch(action.type){
         case actionType:
             return {

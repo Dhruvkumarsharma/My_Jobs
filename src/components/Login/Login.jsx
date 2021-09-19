@@ -17,11 +17,10 @@ const Login = ( { addUser }) => {
         e.preventDefault();
         try{
             let res = await axios.post(`${base_url}auth/login`, {email, password});
-            console.log(res.data);
             addUser(res.data);
             history.push("/feeds");
         }catch(err) {
-            console.log(err);
+            console.log(err.message);
         }
     }
     return (

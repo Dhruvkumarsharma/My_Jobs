@@ -5,21 +5,29 @@ import axios from 'axios';
 import { base_url } from '../../config/data';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import { useHistory } from 'react-router';
+import { connect } from 'react-redux';
 
-const Feeds = () => {
+const Feeds = ({token}) => {
     const [ posts, setPost ] = useState();
     let history = useHistory();
     const handleonclick = ()=>{
         history.push("/postjobs");
     }
     useEffect( () =>{
-        function fetchData() {
+        async function fetchData() {
             try{
-                let jobs = await axios.get(`${base_url}/jobs`);
+                let jobs = await axios.get(`${base_url}/jobs`, {
+                    header: {
+                        "key": "Authorization", 
+                        "value" : token, 
+                        "type" : "text"
+                    }
+                });
+                console.log(jobs);
                 setPost(jobs.data.data);
 
             }catch(err){
-                console.log(err);
+                console.log(err.message);
             }
 
         }
@@ -40,5 +48,10 @@ const Feeds = () => {
         </div>
      );
 }
+const mapStateToProps = ( Store ) => {
+    return {
+        token : Store.token,
+    }
+}
  
-export default Feeds;
+export default connect(mapStateToProps, )(Feeds);

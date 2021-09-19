@@ -4,6 +4,7 @@ import axios from"axios";
 import { base_url } from '../../config/data';
 import { connect } from 'react-redux';
 import { useHistory } from "react-router-dom";
+import { addUser } from '../../config/reducer';
 
 const SetPass = (props) => {
     let history = useHistory();
@@ -14,10 +15,10 @@ const SetPass = (props) => {
         let token = props.token;
         try {
             let res = await axios.post(`${base_url}auth/resetpassword`, { password, confirmPassword, token });
-            console.log(res);
+            props.addUser(res.data);
             history.push("/feeds");
         }catch(err) {
-            console.log(err);
+            console.log(err.message);
         }
     }
 
@@ -47,5 +48,10 @@ const mapStateToprops = (Store) => {
         token : Store.token,
     }
 }
+const mapPropsToState = (dispatch) => {
+    return {
+        addUser : (user) => dispatch(addUser(user))
+    }
+}
  
-export default connect(mapStateToprops, )(SetPass);
+export default connect(mapStateToprops, mapPropsToState)(SetPass);

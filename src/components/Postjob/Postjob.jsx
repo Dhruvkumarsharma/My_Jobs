@@ -3,9 +3,10 @@ import "./Postjobs.css";
 import axios from "axios";
 import {base_url} from "../../config/data";
 import { useHistory } from 'react-router';
+import { connect } from 'react-redux';
 
 
-const Postjobs = () => {
+const Postjobs = ( { token } ) => {
     let history = useHistory();
     const [ title, setTitle ] = useState("");
     const [ description, setDescription ] = useState("");
@@ -13,11 +14,17 @@ const Postjobs = () => {
     const handleOnClick = async (e) => {
         e.preventDefault();
         try {
-            let res = await axios.post(`${base_url}jobs/`, { title, description, location })
+            let res = await axios.post(`${base_url}jobs/`, { title, description, location }, {
+                headers:{
+                    "KEY" : "Authorization", 
+                    "VALUE":token, 
+                    "TYPE":"text"
+                }
+            })
             console.log(res.data);
             history.push("/feeds");
         }catch(err) {
-            console.log(err);
+            console.log(err.message);
         }
     }
     
@@ -45,6 +52,10 @@ const Postjobs = () => {
     );
 }
 
+const mapStateToProps = ( Store ) =>{
+    return {
+        token:Store.token,
+    }
+}
 
-
-export default Postjobs;
+export default connect( mapStateToProps,  )(Postjobs);

@@ -22,7 +22,7 @@ const Forgot = ( { addToken } ) => {
                 history.push("/setpass");
             }
         }catch(err){
-            console.log(err);
+            console.log(err.message);
         }
     }
     return (
